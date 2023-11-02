@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Post A Question
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="short_desc">Short Description:</label>
+            <input type="text" class="form-control" id="short_desc" name="short_desc" required>
+        </div>
+        <div class="form-group">
+            <label for="long_desc">Long Description:</label>
+            <textarea class="form-control" id="long_desc" name="long_desc" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Upload an Image(Optional):</label>
+            <input type="file" class="form-control-file" id="image" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
